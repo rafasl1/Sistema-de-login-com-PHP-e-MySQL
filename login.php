@@ -16,3 +16,14 @@ $result = mysqli_query($conexao, $query);
 $row = mysqli_num_rows($result);
 
 exit;
+
+if($row == 1){
+    $_SESSION['usuario'] = $usuario;
+    header('Location: painel.php');
+    exit();
+}else{
+    header('Location: index.php');
+    exit();
+}
+
+?>
